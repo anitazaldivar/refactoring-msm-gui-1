@@ -17,10 +17,13 @@ class Movie < ApplicationRecord
     return "#{self.title} (#{self.year})"
   end
 
+  # Movie#director
   def director
     d_id = self.director_id
     matching_directors = Director.where({ :id => d_id})
     the_director = matching_directors.at(0)
     return the_director
   end
+
+  # Movie#character
 end
